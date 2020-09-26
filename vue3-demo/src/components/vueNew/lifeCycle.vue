@@ -12,9 +12,9 @@ export default {
     // onBeforeMount(() => {
     //   console.log("onBeforeMount");
     // });
-    onMounted(() => {
-      console.log('++++++ mounted 2')
-    })
+    // onMounted(() => {
+    //   console.log('++++++ mounted 2')
+    // })
    
     // onBeforeUpdate(() => {
     //   console.log("onBeforeUpdate");

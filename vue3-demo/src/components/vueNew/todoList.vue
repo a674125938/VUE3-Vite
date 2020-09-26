@@ -1,5 +1,5 @@
 <template>
-  <h1>3.0</h1>
+  <h1>Demo-a</h1>
   <ul>
     <li v-for="item in state.list" :key="item.no" @click="delItem(item.no)">
       {{ item.no }}-{{ item.text }}
@@ -29,7 +29,7 @@ let obj = {
 export default {
   name: "Demo",
   setup(props, cxt) {
-    const state=reactive(obj)
+    let state=reactive(obj)
     function addItem() {
       if(state.todoObj.no == ''){
         return

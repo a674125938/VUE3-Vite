@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'Demo',
+  name: 'oldDemo',
 
   data() {
     return {
@@ -31,41 +31,41 @@ export default {
       }
     }
   },
-  beforeCreate(){
-    console.log('beforeCreate')
-  },
-  created(){
-    console.log('created')
-  },
-  beforeMount(){
-    console.log('beforeMount')
-  },
-  mounted(){
-    console.log('mounted')
-  },
-  beforeUpdate(){
-    console.log('beforeUpdate')
-  },
-  updated(){
-    console.log('updated')
-  },
+  // beforeCreate(){
+  //   console.log('beforeCreate')
+  // },
+  // created(){
+  //   console.log('created')
+  // },
+  // beforeMount(){
+  //   console.log('beforeMount')
+  // },
+  // mounted(){
+  //   console.log('mounted')
+  // },
+  // beforeUpdate(){
+  //   console.log('beforeUpdate')
+  // },
+  // updated(){
+  //   console.log('updated')
+  // },
   //注意 beforeDestroy 被替换 beforeUnmount
   // beforeDestroy(){
   //   console.log('beforeDestroy')
   // },
-  beforeUnmount(){
-    console.log('beforeUnmount')
-  },
+  // beforeUnmount(){
+  //   console.log('beforeUnmount')
+  // },
   //注意 destroyed 被替换 unmounted
   // destroyed(){
   //   console.log('destroyed')
   // },
-  unmounted(){
-    console.log('unmounted')
-  },
-  errorCaptured(){
-    console.log('errorCaptured')
-  },
+  // unmounted(){
+  //   console.log('unmounted')
+  // },
+  // errorCaptured(){
+  //   console.log('errorCaptured')
+  // },
   methods:{
     delItem(no){
       this.list=this.list.filter(item => item.no != no);
