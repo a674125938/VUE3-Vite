@@ -1,6 +1,6 @@
 <template>
-  <!-- <Demo></Demo> -->
-  <LifeCycle></LifeCycle>
+  <Demo></Demo>
+  <!-- <LifeCycle></LifeCycle> -->
 </template>
 
 <script>

@@ -1,20 +1,20 @@
 <template>
   <h1>3.0</h1>
-  <!-- <ul>
-    <li v-for="item in list" :key="item.no" @click="delItem(item.no)">
+  <ul>
+    <li v-for="item in state.list" :key="item.no" @click="delItem(item.no)">
       {{ item.no }}-{{ item.text }}
     </li>
   </ul>
-  编号：
-  <input type="text" name="" v-model="todoObj.no" />
-  干啥：
-  <input type="text" name="" v-model="todoObj.text" />
-  &nbsp;
-  <button @click="addItem">添加</button> -->
+  <span>编号：</span>
+  <input type="text" name="" v-model="state.todoObj.no" />
+  <span>干啥：</span>
+  <input type="text" name="" v-model="state.todoObj.text" />
+  <span>&nbsp;</span>
+  <button @click="addItem">添加</button>
 </template>
 
 <script>
-import {onBeforeMount,onMounted,onBeforeUpdate,onUpdated,onBeforeUnmount,onUnmounted,onErrorCaptured} from 'Vue'
+import {reactive} from 'vue'
 let obj = {
   list: [
     { no: "1", text: "吃饭" },
@@ -29,27 +29,21 @@ let obj = {
 export default {
   name: "Demo",
   setup(props, cxt) {
-    onBeforeMount(() => {
-      console.log("onBeforeMount");
-    });
-    onMounted(() => {
-      console.log("onMounted");
-    });
-    onBeforeUpdate(() => {
-      console.log("onBeforeUpdate");
-    });
-    onUpdated(() => {
-      console.log("onUpdated");
-    });
-    onBeforeUnmount(() => {
-      console.log("onBeforeUnmount");
-    });
-    onUnmounted(() => {
-      console.log("onUnmounted");
-    });
-    onErrorCaptured(() => {
-      console.log("onErrorCaptured");
-    });
+    const state=reactive(obj)
+    function addItem() {
+      if(state.todoObj.no == ''){
+        return
+      }
+      state.list.push(state.todoObj)
+    }
+    function delItem(no) {
+       state.list=state.list.filter(item => item.no != no);
+    }
+    return {
+      state,
+      addItem,
+      delItem
+    }
   },
 
 
